@@ -6,7 +6,6 @@
     <title>Kut Milz OSINT</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <style>
-        /* ===== Same slick 3D glass styles as before ===== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             min-height: 100vh;
@@ -35,10 +34,7 @@
             transform: rotateX(0deg) rotateY(0deg) scale(1.01);
             box-shadow: 0 40px 80px rgba(0, 0, 0, 0.7), 0 0 0 2px rgba(255, 215, 0, 0.1) inset;
         }
-        .header {
-            text-align: center;
-            margin-bottom: 28px;
-        }
+        .header { text-align: center; margin-bottom: 28px; }
         .header .icon {
             font-size: 56px;
             color: #ffd700;
@@ -46,10 +42,7 @@
             display: inline-block;
             animation: float 3s ease-in-out infinite;
         }
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-        }
+        @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
         .header h1 {
             font-size: 2.4rem;
             font-weight: 700;
@@ -60,12 +53,7 @@
             letter-spacing: -0.5px;
             margin-top: 4px;
         }
-        .header .sub {
-            color: #a7a9be;
-            font-size: 1rem;
-            margin-top: 4px;
-            letter-spacing: 0.3px;
-        }
+        .header .sub { color: #a7a9be; font-size: 1rem; margin-top: 4px; }
         .badge {
             display: inline-block;
             background: rgba(255, 215, 0, 0.12);
@@ -76,7 +64,6 @@
             border-radius: 30px;
             margin-top: 8px;
             font-weight: 600;
-            letter-spacing: 0.5px;
         }
         .backend-section {
             background: rgba(22, 33, 62, 0.6);
@@ -153,23 +140,14 @@
             background: #2ecc71;
             box-shadow: 0 0 16px #2ecc7180;
         }
-        .backend-status .status-text {
-            color: #a7a9be;
-        }
-        .backend-status .status-text strong {
-            color: #fffffe;
-            word-break: break-all;
-        }
-        .backend-status .connected-text {
-            color: #2ecc71;
-        }
+        .backend-status .status-text { color: #a7a9be; }
+        .backend-status .status-text strong { color: #fffffe; word-break: break-all; }
+        .backend-status .connected-text { color: #2ecc71; }
         .login-area {
             margin-top: 14px;
             display: none;
         }
-        .login-area.show {
-            display: block;
-        }
+        .login-area.show { display: block; }
         .login-area .input-group {
             display: flex;
             gap: 10px;
@@ -186,9 +164,7 @@
             outline: none;
             min-width: 160px;
         }
-        .login-area .input-group input:focus {
-            border-color: #ffd700;
-        }
+        .login-area .input-group input:focus { border-color: #ffd700; }
         .login-area .input-group button {
             padding: 14px 28px;
             border: none;
@@ -203,23 +179,12 @@
             transform: scale(1.02);
             box-shadow: 0 8px 24px rgba(255, 215, 0, 0.3);
         }
-        .login-error {
-            color: #e74c3c;
-            font-size: 0.85rem;
-            margin-top: 8px;
-        }
+        .login-error { color: #e74c3c; font-size: 0.85rem; margin-top: 8px; }
 
-        .main-app {
-            display: none;
-            margin-top: 10px;
-        }
-        .main-app.show {
-            display: block;
-        }
+        .main-app { display: none; margin-top: 10px; }
+        .main-app.show { display: block; }
 
-        .form-group {
-            margin-bottom: 18px;
-        }
+        .form-group { margin-bottom: 18px; }
         .form-group label {
             display: block;
             color: #a7a9be;
@@ -227,15 +192,8 @@
             font-weight: 600;
             margin-bottom: 5px;
         }
-        .form-row {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
-        .form-row .form-group {
-            flex: 1;
-            min-width: 140px;
-        }
+        .form-row { display: flex; gap: 14px; flex-wrap: wrap; }
+        .form-row .form-group { flex: 1; min-width: 140px; }
         .form-control {
             width: 100%;
             padding: 14px 16px;
@@ -324,9 +282,7 @@
             margin-top: 24px;
             display: none;
         }
-        .results-area.show {
-            display: block;
-        }
+        .results-area.show { display: block; }
         .results-header {
             display: flex;
             justify-content: space-between;
@@ -334,10 +290,7 @@
             flex-wrap: wrap;
             margin-bottom: 12px;
         }
-        .results-header h4 {
-            color: #ffd700;
-            font-size: 1.2rem;
-        }
+        .results-header h4 { color: #ffd700; font-size: 1.2rem; }
         .results-header .actions {
             display: flex;
             gap: 10px;
@@ -370,9 +323,7 @@
             border-bottom: 1px solid #0f3460;
             vertical-align: middle;
         }
-        table tbody tr:last-child td {
-            border-bottom: none;
-        }
+        table tbody tr:last-child td { border-bottom: none; }
         .badge-source {
             display: inline-block;
             padding: 4px 12px;
@@ -391,9 +342,7 @@
             text-align: center;
             padding: 30px 0;
         }
-        .loader.show {
-            display: block;
-        }
+        .loader.show { display: block; }
         .loader .spinner {
             width: 48px;
             height: 48px;
@@ -403,9 +352,7 @@
             animation: spin 0.8s linear infinite;
             margin: 0 auto 12px;
         }
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
+        @keyframes spin { to { transform: rotate(360deg); } }
         .footer {
             margin-top: 30px;
             text-align: center;
@@ -424,16 +371,11 @@
             border-radius: 30px;
             margin-bottom: 4px;
         }
-        .empty-state {
-            color: #555;
-            text-align: center;
-            padding: 30px 0;
-        }
+        .empty-state { color: #555; text-align: center; padding: 30px 0; }
         @media (max-width: 600px) {
             .glass-card { padding: 20px 16px; }
             .header h1 { font-size: 1.8rem; }
-            .backend-input-group input,
-            .login-area .input-group input { min-width: 120px; }
+            .backend-input-group input, .login-area .input-group input { min-width: 120px; }
             .results-header { flex-direction: column; align-items: stretch; gap: 10px; }
             .results-header .actions { justify-content: flex-start; }
         }
@@ -443,7 +385,6 @@
 
 <div class="glass-card">
 
-    <!-- HEADER -->
     <div class="header">
         <div class="icon"><i class="fas fa-robot"></i></div>
         <h1>Kut Milz OSINT</h1>
@@ -463,7 +404,7 @@
             <span class="status-text" id="statusText">Not connected</span>
         </div>
 
-        <!-- ACCESS KEY LOGIN (auto‑connects if URL is saved) -->
+        <!-- ACCESS KEY LOGIN -->
         <div class="login-area" id="loginArea">
             <div class="input-group">
                 <input type="text" id="accessKey" placeholder="Enter access key" />
@@ -476,7 +417,6 @@
     <!-- MAIN APP -->
     <div class="main-app" id="mainApp">
 
-        <!-- SEARCH FORM -->
         <form id="searchForm">
             <div class="form-row">
                 <div class="form-group">
@@ -528,13 +468,11 @@
             <button type="submit" class="btn-search"><i class="fas fa-search"></i> Search</button>
         </form>
 
-        <!-- LOADER -->
         <div class="loader" id="loader">
             <div class="spinner"></div>
             <p style="color:#a7a9be;">Searching sources...</p>
         </div>
 
-        <!-- RESULTS -->
         <div class="results-area" id="resultsArea">
             <div class="results-header">
                 <h4><i class="fas fa-list"></i> Results (<span id="resultCount">0</span>)</h4>
@@ -545,9 +483,7 @@
             </div>
             <div class="table-wrap">
                 <table>
-                    <thead>
-                        <tr><th>Name</th><th>Address</th><th>Details</th><th>Source</th></tr>
-                    </thead>
+                    <thead><tr><th>Name</th><th>Address</th><th>Details</th><th>Source</th></tr></thead>
                     <tbody id="resultsBody"></tbody>
                 </table>
             </div>
@@ -602,7 +538,6 @@
             statusText.textContent = 'Not connected';
         }
         connected = connectedState;
-        // Show login area only if connected
         if (connected) {
             loginArea.classList.add('show');
         } else {
@@ -612,12 +547,7 @@
 
     async function apiCall(endpoint, method = 'POST', body = null) {
         const url = `${backendUrl}${endpoint}`;
-        const options = {
-            method,
-            headers: {
-                'Accept': 'application/json',
-            },
-        };
+        const options = { method, headers: { 'Accept': 'application/json' } };
         if (body) {
             if (body instanceof FormData) {
                 options.body = body;
@@ -644,7 +574,6 @@
         statusText.textContent = 'Connecting...';
 
         try {
-            // Test connection with a dummy login request
             const testResp = await fetch(`${backendUrl}/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -653,7 +582,6 @@
             if (testResp.status === 401 || testResp.status === 200) {
                 setStatus(true, backendUrl);
                 statusText.innerHTML = `<span class="connected-text">● Connected</span> to <strong>${backendUrl}</strong> – enter access key.`;
-                // Save URL to localStorage
                 localStorage.setItem('osint_backend', backendUrl);
                 return true;
             } else {
@@ -667,7 +595,6 @@
         }
     }
 
-    // Connect button
     connectBtn.addEventListener('click', async () => {
         const url = backendUrlInput.value.trim();
         if (!url) {
@@ -679,7 +606,7 @@
     });
 
     // ============================================
-    // LOGIN (ACCESS KEY) – auto‑connects if needed
+    // LOGIN
     // ============================================
     async function performLogin() {
         const key = accessKeyInput.value.trim();
@@ -689,7 +616,6 @@
         }
         loginError.textContent = '';
 
-        // If not connected, try to auto‑connect using the URL from input or localStorage
         if (!connected) {
             const savedUrl = localStorage.getItem('osint_backend');
             const urlToUse = backendUrlInput.value.trim() || savedUrl;
@@ -704,7 +630,6 @@
             }
         }
 
-        // Now try login
         try {
             const data = await apiCall('/login', 'POST', { access_key: key });
             if (data.success) {
@@ -713,7 +638,6 @@
                 mainApp.classList.add('show');
                 setStatus(true, backendUrl);
                 statusText.innerHTML = `<span class="connected-text">● Connected & Authenticated</span> to <strong>${backendUrl}</strong>`;
-                // Save key? Not needed.
             } else {
                 loginError.textContent = 'Invalid access key.';
             }
@@ -779,7 +703,6 @@
             }
             resultsArea.classList.add('show');
 
-            // Update download link
             const params = new URLSearchParams();
             for (let key in currentQueryParams) {
                 if (Array.isArray(currentQueryParams[key])) {
@@ -792,7 +715,6 @@
                 window.open(`${backendUrl}/download_csv?${params.toString()}`, '_blank');
             };
 
-            // Telegram send uses POST
             sendTelegramBtn.onclick = async () => {
                 const formData2 = new FormData();
                 for (let key in currentQueryParams) {
@@ -821,22 +743,19 @@
     });
 
     // ============================================
-    // AUTO‑CONNECT ON LOAD
+    // AUTO-CONNECT ON LOAD
     // ============================================
     (function init() {
         const saved = localStorage.getItem('osint_backend');
         if (saved) {
             backendUrlInput.value = saved;
-            // Auto-connect after a short delay
             setTimeout(async () => {
                 await connectToBackend(saved);
-                // If connected, auto-focus the access key input
                 if (connected) {
                     accessKeyInput.focus();
                 }
             }, 800);
         } else {
-            // No saved URL – show placeholder and let user type
             backendUrlInput.placeholder = 'https://your-cloudflare-tunnel-url';
         }
     })();
